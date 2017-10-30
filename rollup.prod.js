@@ -1,6 +1,8 @@
 import resolve from 'rollup-plugin-node-resolve'
 import builtins from 'rollup-plugin-node-builtins'
 import uglify from 'rollup-plugin-uglify'
+import commonjs from 'rollup-plugin-commonjs'
+
 
 export default ({
     input: './dist/production.js',
@@ -19,6 +21,7 @@ export default ({
             extensions: [ '.js', '.json' ],
             preferBuiltins: false
         }),
+        commonjs(),
         builtins(),
         uglify()
     ]
