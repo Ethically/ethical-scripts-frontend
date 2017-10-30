@@ -12,6 +12,7 @@ const initScript = `
         .catch(e => console.error(e))
 `
 const beforeScript = (state) => (`
+    window.global = window
     window.process = { env: {} }
     window.state = JSON.parse('${JSON.stringify(state)}')
 `)

@@ -7,6 +7,7 @@ const app = getAppPrefix()
 const entry = '~/dist/browser/entry.js'
 const scriptRoot = '/node_modules/ethical-scripts-frontend/dist/'
 const beforeScript = `
+    window.global = window
     window.process = { env: {} }
     window.state = JSON.parse('{}')
 `
